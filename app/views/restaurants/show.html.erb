@@ -1,0 +1,28 @@
+<h1>More info on <%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.phone_number %></p>
+
+<table class="table">
+  <tr>
+    <th>
+      Rating
+    </th>
+    <th>
+      Content
+    </th>
+  </tr>
+  <% @restaurant.reviews.each do |r| %>
+  <tr>
+   <td>
+    <%= r.rating %>
+   </td>
+   <td>
+    <%= r.content %>
+   </td>
+  </tr>
+  <% end %>
+</table>
+
+
+<p><%= link_to 'Back to list', restaurants_path%></p>
